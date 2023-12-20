@@ -1,1 +1,10 @@
 @import "normalize.css";
+@import "../static/fonts/font.scss";
+@import "./src/pages/login/login";
+@import "components/form-auth/form-auth";
+@import "components/input/input";
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
