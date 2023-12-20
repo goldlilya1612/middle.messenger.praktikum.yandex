@@ -1,58 +1,33 @@
+@import "src/styles/variables.scss";
+
 .input {
-    padding: 10px;
+  &__container {
+    width: 100%;
+    margin-bottom: 31px;
   }
-  
-  .input__container {
-    display: flex;
-    height: 38px;
-    flex-direction: column;
-    align-content: flex-end;
-  }
-  
-  .input__label {
-    transform: translateY(-21px);
-    color: var(--text-secondary-color);
-    font-size: 13px;
-    font-weight: 500;
-    user-select: none;
-    transition:
-      font-size 0.5s,
-      transform 0.5s;
-  }
-  
-  .input__element {
+  &__element {
     border: none;
-    padding: 0;
-    border-bottom: 1px solid var(--main-color);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-color);
+    border-bottom: 1px solid $grey-color;
     padding-bottom: 7px;
+    font-size: 13px;
+    width: 100%;
   }
-  
-  .input__element:focus-visible {
-    outline: none;
-  }
-  
-  .input__text-error {
-    transform: translateY(-7px);
-    color: var(--error-color);
-    font-size: 8px;
-    font-weight: 400;
-    display: none;
-  }
-  
-  .input__element:not(:placeholder-shown) + .input__label,
-  .input__element:focus + .input__label {
-    transform: translateY(-36px);
+  &__label {
+    color: $grey-color;
     font-size: 9px;
+
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-  
-  .input__error .input__text-error {
-    display: block;
+  &__error {
+    display: inline-block;
+    font-size: 8px;
+    color: $red-color;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-  
-  .input__error .input__element {
-    color: var(--error-color);
-  }
-  
+}

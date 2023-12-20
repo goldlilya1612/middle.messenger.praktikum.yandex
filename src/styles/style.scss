@@ -1,0 +1,24 @@
+@import "normalize.css";
+@import "./font.scss";
+@import "../pages/login/login";
+@import "../components/form-auth/form-auth";
+@import "../components/input/input";
+@import "../components/button/buton";
+@import "../components/redirect-link/redirect-link";
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+
+  input {
+    outline:none;
+  }
+
+  button {
+    border: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

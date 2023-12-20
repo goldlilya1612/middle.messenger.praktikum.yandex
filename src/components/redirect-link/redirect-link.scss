@@ -1,0 +1,12 @@
+@import "src/styles/variables.scss";
+
+.redirect-link {
+  color: $purple-color;
+  font-size: 11px;
+  transition: color .2s ease-out;
+
+  &:hover {
+    cursor: pointer;
+    color: $dark-purple-color;
+  };
+}
