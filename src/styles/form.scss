@@ -1,12 +1,14 @@
-.login-container {
-  width: 100vw;
-  height: 100vh;
+.form-container {
+  margin: 40px auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.login-form {
+.form {
+  &__title {
+    font-size: 20px;
+  }
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -20,5 +22,6 @@
     flex-direction: column;
     align-items: center;
     row-gap: 14px;
+    margin-top: 47px;
   }
 }

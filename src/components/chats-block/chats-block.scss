@@ -1,0 +1,10 @@
+@import "src/styles/variables.scss";
+
+.chats-block {
+  border-right: 1px solid $light-grey-color;
+  box-sizing: border-box;
+  padding: 21px 10px 10px 10px;
+  min-width: 310px;
+  width: 24%;
+  height: 100vh;
+}

@@ -4,6 +4,8 @@ import * as Pages from './pages';
 
 const pages = {
     'login': [Pages.LoginPage, {title: 'Вход'}],
+    'register': [ Pages.RegisterPage, {title: 'Регистрация'} ],
+    'chats': [Pages.ChatsPage]
 }
 
 Object.entries(Components).forEach(([ name, component ]) => {
@@ -11,7 +13,6 @@ Object.entries(Components).forEach(([ name, component ]) => {
 });
 
 function navigate(page: string) {
-    //@ts-ignore
     const [ source, context ] = pages[page];
     const container = document.getElementById('app')!;
     container.innerHTML = Handlebars.compile(source)(context);

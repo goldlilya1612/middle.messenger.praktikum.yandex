@@ -1,10 +1,16 @@
 @import "normalize.css";
-@import "./font.scss";
-@import "../pages/login/login";
+
+@import "./font";
+@import "./form";
+
 @import "../components/form-auth/form-auth";
 @import "../components/input/input";
 @import "../components/button/buton";
 @import "../components/redirect-link/redirect-link";
+@import "../components/chats-block/chats-block";
+@import "../components/search-field/search-field";
+
+@import "../pages/chats/chats";
 
 body {
   font-family: 'Inter', sans-serif;
@@ -12,6 +18,7 @@ body {
 
   input {
     outline:none;
+    border: none;
   }
 
   button {
@@ -20,5 +27,17 @@ body {
 
   a {
     text-decoration: none;
+  }
+
+  h1, p {
+    margin: 0;
+  }
+
+  #app {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }

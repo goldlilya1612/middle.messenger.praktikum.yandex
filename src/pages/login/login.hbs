@@ -1,14 +1,14 @@
-<section class="login-container">
+<section class="form-container">
     {{#> FormAuth}}
-        <h1 class="login-form__title">{{title}}</h1>
-        <div class="login-form__wrapper">
-            <div class="login-form__inputs">
-                {{> Input label="Логин" type="text" placeholder="Логин" error="Неверный логин" name="login" }}
+        <h1 class="form__title">{{title}}</h1>
+        <div class="form__wrapper">
+            <div class="form__inputs">
+                {{> Input label="Логин" type="text" placeholder="Логин" name="login" }}
                 {{> Input label="Пароль" type="password" placeholder="Пароль" error="Неверный логин Неверный логин Неверный логин Неверный логин Неверный логин Неверный логинНеверный логин Неверный логин Неверный логин" name="password"}}
             </div>
-            <div class="login-form__buttons">
-                {{> Button label="Авторизоваться"}}
-                {{> RedirectLink href="#" label="Нет аккаунта?"}}
+            <div class="form__buttons">
+                {{> Button page="chats" label="Авторизоваться"}}
+                {{> RedirectLink page="register" href="#" label="Нет аккаунта?" }}
             </div>
         </div>
     {{/FormAuth}}
