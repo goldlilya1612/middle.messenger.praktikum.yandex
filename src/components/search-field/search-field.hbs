@@ -4,11 +4,12 @@
             name={{name}}
             id={{name}}
             type="search"
+            value={{value}}
     >
-<!--    remove comments below to see search-field placeholder-->
-
-<!--    <div class="search-field__placeholder">-->
-<!--        <img src="../../../static/images/search-icon.svg" alt="search-icon">-->
-<!--        <p>Найти</p>-->
-<!--    </div>-->
+    {{#if (isEmpty value)}}
+        <div class="search-field__placeholder">
+            <img src="../../../static/images/search-icon.svg" alt="search-icon">
+            <p>Найти</p>
+        </div>
+    {{/if}}
 </div>
