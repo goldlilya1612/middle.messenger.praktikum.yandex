@@ -2,7 +2,8 @@
 
 .search-field-containter {
   position: relative;
-  margin: 0 10px 27px 10px;
+  margin: 0 10px;
+  padding-bottom: 27px;
   display: flex;
   justify-content: center;
 }
@@ -24,7 +25,7 @@
     align-items: center;
     column-gap: 4px;
     position: absolute;
-    top: 25%;
+    top: 7px;
     justify-content: center;
   }
 }

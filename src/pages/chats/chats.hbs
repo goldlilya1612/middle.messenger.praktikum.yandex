@@ -1,15 +1,21 @@
 <section class="chats">
     {{#> ChatsBlock}}
-        <a class="chats__link" href="#">
-            <p class="chats__link-text">Профиль</p>
-            <img class="chats__link-icon" src="../../../static/images/arrow-icon.svg" alt="arrow">
-        </a>
-<!--        set value to hide placeholder-->
-        {{> SearchField value="" name="search-field"}}
+        <div class="chats__header">
+            <a class="chats__link" href="#">
+                <p class="chats__link-text">Профиль</p>
+                <img class="chats__link-icon" src="../../../static/images/arrow-icon.svg" alt="arrow">
+            </a>
+            <!--        set value to hide placeholder-->
+            {{> SearchField value="" name="search-field"}}
+        </div>
+
         <ul class="chats__list">
             {{#each chats}}
                 {{> ChatCard chat=this }}
             {{/each}}
         </ul>
     {{/ChatsBlock}}
+    {{#>EmptyBlock text="Выберите чат, чтобы отправить сообщение"}}
+        {{> ErrorLink}}
+    {{/EmptyBlock}}
 </section>

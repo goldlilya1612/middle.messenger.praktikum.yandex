@@ -2,7 +2,7 @@ import Handlebars from 'handlebars';
 import * as Components from './components';
 import * as Pages from './pages';
 
-const props = {
+const chatsProps = {
     chats: [
         {
             name:  "Андрей",
@@ -71,7 +71,9 @@ const props = {
 const pages = {
     'login': [Pages.LoginPage, {title: 'Вход'}],
     'register': [ Pages.RegisterPage, {title: 'Регистрация'} ],
-    'chats': [Pages.ChatsPage, props]
+    'chats': [Pages.ChatsPage, chatsProps],
+    'not-found-page': [Pages.NotFoundPage],
+    'server-error-page': [Pages.ServerErrorPage],
 }
 
 Object.entries(Components).forEach(([ name, component ]) => {
@@ -89,6 +91,8 @@ function navigate(page: string) {
     container.innerHTML = Handlebars.compile(source)(context);
 }
 
+// document.addEventListener('DOMContentLoaded', () => navigate('not-found-page'));
+// document.addEventListener('DOMContentLoaded', () => navigate('server-error-page'));
 document.addEventListener('DOMContentLoaded', () => navigate('login'));
 
 document.addEventListener('click', e => {
