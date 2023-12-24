@@ -123,6 +123,34 @@ const chatsPageProps = {
             isFileAttached: 'not-attached',
         },
     ],
+    menuButtons: [
+        {
+            text: "Добавить пользователя",
+            color: "green",
+        },
+        {
+            text: "Удалить пользователя",
+            color: "yellow",
+        },
+        {
+            text: "Удалить чат",
+            color: "red",
+        },
+    ],
+    attachButtons: [
+        {
+            text: "Фото и видео",
+            color: "white",
+        },
+        {
+            text: "Файл",
+            color: "white",
+        },
+        {
+            text: "Локация",
+            color: "white",
+        },
+    ]
 }
 
 

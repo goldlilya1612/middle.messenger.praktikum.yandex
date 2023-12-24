@@ -18,13 +18,13 @@
 
 <!--    comment out message block to see EmptyBlock-->
     <div class="messages-block">
-        {{> MessagesHeader name="Лиля"}}
+        {{> MessagesHeader name="Лиля" menuButtons=menuButtons}}
         <ul class="messages">
             {{#each messages}}
                 {{> Message message=message }}
             {{/each}}
         </ul>
-        {{> MessageField }}
+        {{> MessageField attachButtons=attachButtons}}
     </div>
 
 <!--    {{#>EmptyBlock text="Выберите чат, чтобы отправить сообщение"}}-->

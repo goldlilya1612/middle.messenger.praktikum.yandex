@@ -16,6 +16,7 @@
 @import "../components/messages-header/messages-header";
 @import "../components/message-field/message-field";
 @import "../components/message/message";
+@import "../components/button-chip/button-chip";
 
 @import "../pages/chats/chats";
 
@@ -38,6 +39,15 @@ body {
 
   h1, p {
     margin: 0;
+  }
+
+  button {
+    padding: 0;
+    background-color: inherit;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   #app {

@@ -11,3 +11,4 @@ export { ErrorLink } from './error-link';
 export { MessagesHeader } from './messages-header';
 export { MessageField } from './message-field';
 export { Message } from './message';
+export { ButtonChip } from './button-chip';
