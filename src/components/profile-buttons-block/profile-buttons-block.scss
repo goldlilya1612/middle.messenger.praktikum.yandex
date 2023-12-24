@@ -11,11 +11,9 @@
 
   &__block-button {
     margin-bottom: 21px;
-    transition: font-size .2s ease-out;
 
     &:hover {
       cursor: pointer;
-      font-size: 14px;
     }
 
     &:last-of-type {
