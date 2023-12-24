@@ -5,7 +5,7 @@
   align-items: center;
 
   &__go-back {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -20,21 +20,44 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
+  padding-left: 65px;
   padding-top: 30px;
   padding-bottom: 30px;
   box-sizing: border-box;
-  height: 100vh;
-  overflow-y: scroll;
   width: 100%;
 
   &__image-block {
     position: relative;
+    width: 130px;
+    height: 130px;
+  }
+
+  &__image-input {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    z-index: 13;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__image {
     width: 130px;
     height: 130px;
+    top: 0;
+    right: 0;
+
+    &_editing-mode {
+      position: absolute;
+    }
   }
 
   &__image-mask {
@@ -74,7 +97,6 @@
     }
     &:hover:before,
     &:hover:after {
-      cursor: pointer;
       opacity: 1;
     }
   }

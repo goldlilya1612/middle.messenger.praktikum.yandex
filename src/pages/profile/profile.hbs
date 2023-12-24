@@ -5,24 +5,42 @@
         </button>
     </div>
     <div class="profile">
-        <div class="profile__image-block">
-            <img class="profile__image" src="../../../static/images/profile.svg" alt="profile">
-            <span class="profile__image-mask">
-        </span>
-        </div>
-        <p class="profile__title">{{title}}</p>
+        {{#if (isEditingMode mode)}}
+            <div>
+                <div class="profile__image-block">
+                    <img class="profile__image profile__image_editing-mode" src="../../../static/images/profile.svg" alt="profile">
+                    <span class="profile__image-mask">
+                <input class="profile__image-input" type="file" name="avatar" id="avatar">
+            </span>
+                </div>
+            </div>
+            <div class="profile__form">
+                {{#each formInputs}}
+                    {{> ProfileInput formInput=formInput}}
+                {{/each}}
+            </div>
+            {{> Button label="Сохранить"}}
+        {{/if}}
 
-        <div class="profile__form">
-            {{#each formInputs}}
-                {{> ProfileInput formInput=formInput}}
-            {{/each}}
-        </div>
+        {{#if (isPasswordEditingMode mode)}}
+            <img class="profile__image" src="../../../static/images/profile.svg" alt="profile">
+            <div class="profile__form">
+                {{#each passwordInputs}}
+                    {{> ProfileInput formInput=passwordInput}}
+                {{/each}}
+            </div>
+            {{> Button label="Сохранить"}}
+        {{/if}}
 
         {{#if (isViewMode mode)}}
+            <img class="profile__image" src="../../../static/images/profile.svg" alt="profile">
+            <p class="profile__title">{{title}}</p>
+            <div class="profile__form">
+                {{#each formInputs}}
+                    {{> ProfileInputView formInput=formInput}}
+                {{/each}}
+            </div>
             {{> ProfileButtonsBlock}}
-        {{/if}}
-        {{#if (isEditingMode mode)}}
-            {{> Button label="Сохранить"}}
         {{/if}}
     </div>
 </section>
