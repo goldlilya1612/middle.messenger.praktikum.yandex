@@ -44,6 +44,13 @@
   overflow-y: scroll;
   position: relative;
 
+  &__time-data {
+    width: fit-content;
+    font-size: 12px;
+    color: $grey-color;
+    margin: 10px auto;
+  }
+
   &__menu-buttons {
     position: absolute;
     top: 80px;

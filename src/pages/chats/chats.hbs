@@ -19,11 +19,15 @@
 <!--    comment out message block to see EmptyBlock-->
     <div class="messages-block">
         {{> MessagesHeader name="Лиля" menuButtons=menuButtons}}
-        <ul class="messages">
-            {{#each messages}}
-                {{> Message message=message }}
-            {{/each}}
-        </ul>
+        <div class="messages-block__wrapper">
+            <p class="messages-block__time-data">19 июня</p>
+            <ul class="messages">
+                {{#each messages}}
+                    {{> Message message=message }}
+                {{/each}}
+            </ul>
+        </div>
+
         {{> MessageField attachButtons=attachButtons}}
 
 <!--        remove comment to see modal window-->
