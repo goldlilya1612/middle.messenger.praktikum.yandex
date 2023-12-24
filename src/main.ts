@@ -4,8 +4,17 @@ import * as Components from './components';
 import * as Pages from './pages';
 
 import {PROFILE_PAGE_PROPS, CHATS_PAGE_PROPS} from "./utils/constants";
+import {
+    isEditingMode,
+    isEmpty,
+    isFileAttached,
+    isOutgoing,
+    isPasswordEditingMode,
+    isViewMode
+} from "./utils/helpers";
 
 
+// change field "mode" in constants.ts to switch profile mode
 const pages = {
     'login': [Pages.LoginPage, {title: 'Вход'}],
     'register': [ Pages.RegisterPage, {title: 'Регистрация'} ],
@@ -18,24 +27,12 @@ const pages = {
 Object.entries(Components).forEach(([ name, component ]) => {
     Handlebars.registerPartial(name, component);
 
-    Handlebars.registerHelper("isEmpty", function (value) {
-        return value === "";
-    });
-    Handlebars.registerHelper("isFileAttached", function (value) {
-        return value === "attached";
-    });
-    Handlebars.registerHelper("isOutgoing", function (value) {
-        return value === "outgoing";
-    });
-    Handlebars.registerHelper("isViewMode", function (value) {
-        return value === "view";
-    });
-    Handlebars.registerHelper("isEditingMode", function (value) {
-        return value === "editing";
-    });
-    Handlebars.registerHelper("isPasswordEditingMode", function (value) {
-        return value === "passwordEditing";
-    });
+    Handlebars.registerHelper("isEmpty", isEmpty);
+    Handlebars.registerHelper("isFileAttached", isFileAttached);
+    Handlebars.registerHelper("isOutgoing", isOutgoing);
+    Handlebars.registerHelper("isViewMode", isViewMode);
+    Handlebars.registerHelper("isEditingMode", isEditingMode);
+    Handlebars.registerHelper("isPasswordEditingMode", isPasswordEditingMode);
 });
 
 function navigate(page: string) {

@@ -152,7 +152,7 @@ export const CHATS_PAGE_PROPS = {
 export const PROFILE_PAGE_PROPS = {
     title: "Лиля",
     // mode options - view/editing/passwordEditing
-    mode: "passwordEditing",
+    mode: "view",
     formInputs: [
         {
             name: "email",

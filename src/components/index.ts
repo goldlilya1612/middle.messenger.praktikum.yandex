@@ -17,4 +17,5 @@ export { ButtonChip } from './button-chip';
 export { ProfileButtonsBlock } from './profile-buttons-block';
 export { ProfileInput } from './profile-input';
 export { ProfileInputView } from './profile-input-view';
+export { ModalWindow } from './modal-window';
 
