@@ -1,0 +1,13 @@
+<div class="message message_{{this.type}} message_{{this.isFileAttached}}" >
+    <p>{{this.message}}</p>
+    {{#if (isFileAttached this.isFileAttached)}}
+        <img class="message__image" src="../../../static/images/attached-file.jpg" alt="attached-file">
+    {{/if}}
+    <div class="message__info">
+        {{#if (isOutgoing this.type)}}
+            <img src="../../../static/images/message-read.svg" alt="message-read"/>
+        {{/if}}
+        <p class="message__time_{{this.isFileAttached}} message__time">{{this.time}}</p>
+    </div>
+</div>
+

@@ -2,7 +2,7 @@ import Handlebars from 'handlebars';
 import * as Components from './components';
 import * as Pages from './pages';
 
-const chatsProps = {
+const chatsPageProps = {
     chats: [
         {
             name:  "Андрей",
@@ -65,13 +65,71 @@ const chatsProps = {
             count: 4,
         },
     ],
+    messages: [
+        {
+            type: "incoming",
+            time: '22:02',
+            message: 'Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.\n' +
+                '\n' +
+                'Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.',
+            isFileAttached: 'not-attached',
+        },
+        {
+            type: "incoming",
+            time: '22:05',
+            message: '',
+            isFileAttached: 'attached',
+        },
+        {
+            type: "outgoing",
+            time: '23:23',
+            message: 'Круто!',
+            isFileAttached: 'not-attached',
+        },
+        {
+            type: "outgoing",
+            time: '23:55',
+            message: 'Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.\n' +
+                '\n' +
+                'Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.',
+            isFileAttached: 'not-attached',
+        },
+        {
+            type: "incoming",
+            time: '22:02',
+            message: 'Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.\n' +
+                '\n' +
+                'Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.',
+            isFileAttached: 'not-attached',
+        },
+        {
+            type: "incoming",
+            time: '22:05',
+            message: '',
+            isFileAttached: 'attached',
+        },
+        {
+            type: "outgoing",
+            time: '23:23',
+            message: 'Круто!',
+            isFileAttached: 'not-attached',
+        },
+        {
+            type: "outgoing",
+            time: '23:55',
+            message: 'Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.\n' +
+                '\n' +
+                'Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.',
+            isFileAttached: 'not-attached',
+        },
+    ],
 }
 
 
 const pages = {
     'login': [Pages.LoginPage, {title: 'Вход'}],
     'register': [ Pages.RegisterPage, {title: 'Регистрация'} ],
-    'chats': [Pages.ChatsPage, chatsProps],
+    'chats': [Pages.ChatsPage, chatsPageProps],
     'not-found-page': [Pages.NotFoundPage],
     'server-error-page': [Pages.ServerErrorPage],
 }
@@ -79,8 +137,14 @@ const pages = {
 Object.entries(Components).forEach(([ name, component ]) => {
     Handlebars.registerPartial(name, component);
     Handlebars.registerHelper('isEmpty', function (value) {
-        console.log(value === '')
         return value === '';
+    });
+    Handlebars.registerHelper('isFileAttached', function (value) {
+        return value === 'attached';
+    });
+
+    Handlebars.registerHelper('isOutgoing', function (value) {
+        return value === 'outgoing';
     });
 
 });

@@ -1,0 +1,55 @@
+@import "src/styles/variables.scss";
+
+.message {
+  border-radius: 12px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 11px;
+  font-size: 12px;
+  max-width: 402px;
+  width: fit-content;
+  position: relative;
+
+  &_incoming {
+    background-color: $extra-light-grey-color;
+    margin-left: 0;
+  }
+
+  &_outgoing {
+    background-color: $purple-color;
+    color: $white-color;
+    margin-left: auto;
+    padding-right: 55px;
+  }
+
+  &_attached {
+    padding: 0;
+    position: relative;
+  }
+
+  &__time {
+    font-size: 9px;
+    align-self: flex-end;
+    margin-left: 4px;
+  }
+
+  &__time_attached {
+    color: white;
+    background-color: rgba(82, 82, 82, 50%);
+    border-radius: 30px;
+    padding: 2px 7px;
+  }
+
+  &__image {
+    border: 1px solid $extra-light-grey-color;
+    border-radius: 12px;
+  }
+
+  &__info {
+    display: flex;
+    position: absolute;
+    right: 11px;
+    bottom: 11px;
+    margin: auto;
+  }
+}

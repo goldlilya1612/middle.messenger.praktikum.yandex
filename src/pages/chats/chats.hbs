@@ -11,11 +11,23 @@
 
         <ul class="chats__list">
             {{#each chats}}
-                {{> ChatCard chat=this }}
+                {{> ChatCard chat=chat }}
             {{/each}}
         </ul>
     {{/ChatsBlock}}
-    {{#>EmptyBlock text="Выберите чат, чтобы отправить сообщение"}}
-        {{> ErrorLink}}
-    {{/EmptyBlock}}
+
+<!--    comment out message block to see EmptyBlock-->
+    <div class="messages-block">
+        {{> MessagesHeader name="Лиля"}}
+        <ul class="messages">
+            {{#each messages}}
+                {{> Message message=message }}
+            {{/each}}
+        </ul>
+        {{> MessageField }}
+    </div>
+
+<!--    {{#>EmptyBlock text="Выберите чат, чтобы отправить сообщение"}}-->
+<!--        {{> ErrorLink}}-->
+<!--    {{/EmptyBlock}}-->
 </section>

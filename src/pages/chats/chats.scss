@@ -36,3 +36,15 @@
     padding: 0;
   }
 }
+
+.messages-block {
+  width: 100%;
+  padding: 0 17px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.messages {
+  margin: 0;
+  padding: 0;
+}

@@ -8,3 +8,6 @@ export { ChatCard } from './chat-card';
 export { EmptyBlock } from './empty-block';
 export { ErrorBlock } from './error-block';
 export { ErrorLink } from './error-link';
+export { MessagesHeader } from './messages-header';
+export { MessageField } from './message-field';
+export { Message } from './message';
