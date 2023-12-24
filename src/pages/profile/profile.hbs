@@ -10,8 +10,8 @@
                 <div class="profile__image-block">
                     <img class="profile__image profile__image_editing-mode" src="../../../static/images/profile.svg" alt="profile">
                     <span class="profile__image-mask">
-                <input class="profile__image-input" type="file" name="avatar" id="avatar">
-            </span>
+                        <button class="profile__image-button"></button>
+                    </span>
                 </div>
             </div>
             <div class="profile__form">
@@ -20,6 +20,16 @@
                 {{/each}}
             </div>
             {{> Button label="Сохранить"}}
+<!--            {{#> ModalWindow  title="Загрузить файл" label="Поменять"}}-->
+<!--&lt;!&ndash;                <p class="modal-window__file-name">pic.1</p>&ndash;&gt;-->
+<!--                <div>-->
+<!--                    <span class="modal-window__input-file-wrapper">-->
+<!--                    Выбрать файл на компьютере-->
+<!--                    <input name="avatar" id="avatar" class="modal-window__input-file" type="file" placeholder="Выбрать файл на компьютере">-->
+<!--                </span>-->
+<!--                    <span class="modal-window__error">Нужно выбрать файл</span>-->
+<!--                </div>-->
+<!--            {{/ModalWindow}}-->
         {{/if}}
 
         {{#if (isPasswordEditingMode mode)}}

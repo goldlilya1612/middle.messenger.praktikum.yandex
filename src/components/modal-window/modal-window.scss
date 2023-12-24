@@ -1,0 +1,76 @@
+@import "src/styles/variables.scss";
+
+.modal-window-wrapper {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.modal-window {
+  position: relative;
+  background-color: white;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 40px 30px;
+  min-width: 340px;
+  min-height: 257px;
+
+  &__cross {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  &__file-name {
+    font-size: 14px;
+    color: $grey-color;
+  }
+
+  &__error {
+    display: inline-block;
+    font-size: 11px;
+    color: #FF2F2F;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 20px;
+  }
+
+  &__input-file-wrapper {
+    position: relative;
+    text-decoration: underline;
+    color: $purple-color;
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    width: 122px;
+  }
+
+  &__input-file {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    left: 0;
+    top: 0;
+  }
+}
+
