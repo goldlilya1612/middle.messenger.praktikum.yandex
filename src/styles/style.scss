@@ -17,8 +17,11 @@
 @import "../components/message-field/message-field";
 @import "../components/message/message";
 @import "../components/button-chip/button-chip";
+@import "../components/profile-buttons-block/profile-buttons-block";
+@import "../components/profile-input/profile-input";
 
 @import "../pages/chats/chats";
+@import "../pages/profile/profile";
 
 body {
   font-family: 'Inter', sans-serif;

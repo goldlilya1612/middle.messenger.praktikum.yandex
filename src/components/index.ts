@@ -1,3 +1,5 @@
+import {ProfileButtonsBlock} from "./profile-buttons-block";
+
 export { FormAuth } from './form-auth';
 export { Input } from './input';
 export { Button } from './button';
@@ -12,3 +14,6 @@ export { MessagesHeader } from './messages-header';
 export { MessageField } from './message-field';
 export { Message } from './message';
 export { ButtonChip } from './button-chip';
+export { ProfileButtonsBlock } from './profile-buttons-block';
+export { ProfileInput } from './profile-input';
+

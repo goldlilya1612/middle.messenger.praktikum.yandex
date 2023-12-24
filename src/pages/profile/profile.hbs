@@ -1,0 +1,28 @@
+<section class="profile-page">
+    <div class="profile-page__go-back">
+        <button>
+            <img page="chats" src="./../../../static/images/go-back.svg" alt="go-back">
+        </button>
+    </div>
+    <div class="profile">
+        <div class="profile__image-block">
+            <img class="profile__image" src="../../../static/images/profile.svg" alt="profile">
+            <span class="profile__image-mask">
+        </span>
+        </div>
+        <p class="profile__title">{{title}}</p>
+
+        <div class="profile__form">
+            {{#each formInputs}}
+                {{> ProfileInput formInput=formInput}}
+            {{/each}}
+        </div>
+
+        {{#if (isViewMode mode)}}
+            {{> ProfileButtonsBlock}}
+        {{/if}}
+        {{#if (isEditingMode mode)}}
+            {{> Button label="Сохранить"}}
+        {{/if}}
+    </div>
+</section>

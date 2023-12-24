@@ -153,6 +153,49 @@ const chatsPageProps = {
     ]
 }
 
+const profilePageProps = {
+    title: "Лиля",
+    mode: 'view',
+    formInputs: [
+        {
+            name: "email",
+            label: "Почта",
+            value: "pochta@yandex.ru",
+            type: "email",
+        },
+        {
+            name: "login",
+            label: "Логин",
+            value: "lalvolodina",
+            type: "text",
+        },
+        {
+            name: "first_name",
+            label: "Имя",
+            value: "Лиля",
+            type: "text",
+        },
+        {
+            name: "second_name",
+            label: "Фамилия",
+            value: "Володина",
+            type: "text",
+        },
+        {
+            name: "display_name",
+            label: "Имя в чате",
+            value: "Лиля))))00)",
+            type: "text",
+        },
+        {
+            name: "phone",
+            label: "Телефон",
+            value: "+7(999)999-99-99",
+            type: "tel",
+        },
+    ],
+}
+
 
 const pages = {
     'login': [Pages.LoginPage, {title: 'Вход'}],
@@ -160,21 +203,27 @@ const pages = {
     'chats': [Pages.ChatsPage, chatsPageProps],
     'not-found-page': [Pages.NotFoundPage],
     'server-error-page': [Pages.ServerErrorPage],
+    'profile': [Pages.ProfilePage, profilePageProps],
 }
 
 Object.entries(Components).forEach(([ name, component ]) => {
     Handlebars.registerPartial(name, component);
+
     Handlebars.registerHelper('isEmpty', function (value) {
         return value === '';
     });
     Handlebars.registerHelper('isFileAttached', function (value) {
         return value === 'attached';
     });
-
     Handlebars.registerHelper('isOutgoing', function (value) {
         return value === 'outgoing';
     });
-
+    Handlebars.registerHelper('isViewMode', function (value) {
+        return value === 'view';
+    });
+    Handlebars.registerHelper('isEditingMode', function (value) {
+        return value === 'editing';
+    });
 });
 
 function navigate(page: string) {
@@ -183,6 +232,7 @@ function navigate(page: string) {
     container.innerHTML = Handlebars.compile(source)(context);
 }
 
+// remove comments to see NotFoundPage or ServerErrorPage
 // document.addEventListener('DOMContentLoaded', () => navigate('not-found-page'));
 // document.addEventListener('DOMContentLoaded', () => navigate('server-error-page'));
 document.addEventListener('DOMContentLoaded', () => navigate('login'));
