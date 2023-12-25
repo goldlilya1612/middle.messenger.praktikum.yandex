@@ -1,0 +1,31 @@
+@import "src/styles/variables.scss";
+
+.profile {
+  &__block-buttons {
+    list-style-type: none;
+    padding: 0;
+    font-size: 13px;
+    margin: 0;
+    min-width: 510px;
+  }
+
+  &__block-button {
+    margin-bottom: 21px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &_purple {
+      color: $purple-color;
+    }
+
+    &_red {
+      color: $red-color;
+    }
+  }
+}

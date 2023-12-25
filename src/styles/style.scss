@@ -1,0 +1,64 @@
+@import "normalize.css";
+
+@import "./font";
+@import "./form";
+@import "./profile-input";
+
+@import "../components/form-auth/form-auth";
+@import "../components/input/input";
+@import "../components/button/buton";
+@import "../components/redirect-link/redirect-link";
+@import "../components/chats-block/chats-block";
+@import "../components/search-field/search-field";
+@import "../components/chat-card/chats-card";
+@import "../components/empty-block/empty-block";
+@import "../components/error-block/error-block";
+@import "../components/error-link/error-link";
+@import "../components/messages-header/messages-header";
+@import "../components/message-field/message-field";
+@import "../components/message/message";
+@import "../components/button-chip/button-chip";
+@import "../components/profile-buttons-block/profile-buttons-block";
+@import "../components/modal-window/modal-window";
+
+@import "../pages/chats/chats";
+@import "../pages/profile/profile";
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+
+  input {
+    outline:none;
+    border: none;
+  }
+
+  button {
+    border: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h1, p {
+    margin: 0;
+  }
+
+  button {
+    padding: 0;
+    background-color: inherit;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  #app {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,80 @@
+@import "../../styles/variables";
+
+.chats {
+  flex-grow: 1;
+  display: flex;
+
+  &__header {
+    position: sticky;
+    padding-top: 21px;
+    background-color: $white-color;
+    top: 0;
+  }
+
+  &__list {
+    margin: 0;
+  }
+
+  &__link {
+    font-size: 12px;
+    color: $grey-color;
+    display: flex;
+    margin-bottom: 23px;
+    margin-right: 10px;
+  }
+
+  &__link-text {
+    margin-left: auto;
+  }
+
+  &__link-icon {
+    margin-left: 4px;
+  }
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+  }
+}
+
+.messages-block {
+  width: 100%;
+  padding: 0 17px;
+  height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+
+  &__time-data {
+    width: fit-content;
+    font-size: 12px;
+    color: $grey-color;
+    margin: 10px auto;
+  }
+
+  &__menu-buttons {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    row-gap: 11px;
+    align-items: flex-end;
+  }
+
+  &__attach-buttons {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    row-gap: 11px;
+    align-items: flex-start;
+  }
+}
+
+.messages {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,29 @@
+@import "src/styles/variables.scss";
+
+.button-chip {
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 12px;
+  width: fit-content;
+
+  &_green {
+    background-color: #C6F6D5;
+    color: #38A169;
+  }
+
+  &_yellow {
+    background-color: #FEEBC8;
+    color: #DD6B20;
+  }
+
+  &_white {
+    background-color: $white-color;
+    border: 1px solid $purple-color;
+    color: $purple-color;
+  }
+
+  &_red {
+    background-color: #FFCCCC;
+    color: #DD3720;
+  }
+}

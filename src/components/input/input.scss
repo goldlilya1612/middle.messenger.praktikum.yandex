@@ -1,0 +1,33 @@
+@import "src/styles/variables.scss";
+
+.input {
+  &__container {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  &__element {
+    border: none;
+    border-bottom: 1px solid $grey-color;
+    padding-bottom: 7px;
+    font-size: 13px;
+    width: 100%;
+  }
+  &__label {
+    color: $grey-color;
+    font-size: 9px;
+
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &__error {
+    display: inline-block;
+    font-size: 8px;
+    color: $red-color;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

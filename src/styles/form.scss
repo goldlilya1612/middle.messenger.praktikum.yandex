@@ -1,0 +1,27 @@
+.form-container {
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  &__title {
+    font-size: 20px;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: 340px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 14px;
+    margin-top: 47px;
+  }
+}
