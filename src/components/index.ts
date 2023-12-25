@@ -1,5 +1,3 @@
-import {ProfileButtonsBlock} from "./profile-buttons-block";
-
 export { FormAuth } from './form-auth';
 export { Input } from './input';
 export { Button } from './button';
