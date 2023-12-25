@@ -1,6 +1,6 @@
 {
   "name": "middle.messenger.praktikum.yandex",
-  "private": true,
+  "private": false,
   "version": "0.0.1",
   "scripts": {
     "start": "vite build && node ./server.js",
