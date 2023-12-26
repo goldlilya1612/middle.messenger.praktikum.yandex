@@ -54,6 +54,14 @@
     margin-top: 20px;
   }
 
+  &__form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+
   &__input-file-wrapper {
     position: relative;
     text-decoration: underline;
