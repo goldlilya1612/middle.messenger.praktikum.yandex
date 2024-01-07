@@ -1,0 +1,13 @@
+@import "src/styles/variables.scss";
+
+.error-block {
+  &__link {
+    font-size: 11px;
+    color: $blue-color;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+

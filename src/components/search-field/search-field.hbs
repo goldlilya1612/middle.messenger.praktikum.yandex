@@ -1,0 +1,17 @@
+<div class="search-field-containter">
+    <input
+            class="search-field"
+            name={{name}}
+            id={{name}}
+            type="search"
+            value={{value}}
+    >
+    {{#if (isEmpty value)}}
+        <div class="search-field__placeholder">
+            <img src="assets/search-icon.svg" alt="search-icon">
+            <p>Найти</p>
+        </div>
+    {{/if}}
+</div>
+
+

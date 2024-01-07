@@ -1,0 +1,19 @@
+@import "src/styles/variables.scss";
+
+.empty-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__image {
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    color: $grey-color;
+    font-size: 12px;
+  }
+}
+
