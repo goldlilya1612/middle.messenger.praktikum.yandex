@@ -1,8 +1,8 @@
-export const isEmpty = (value) => value === "";
-export const isFileAttached = (value) => value === "attached";
-export const isOutgoing = (value) => value === "outgoing";
-export const isViewMode = (value) => value === "view";
-export const isEditingMode = (value) => value === "editing";
-export const isPasswordEditingMode = (value) => value === "passwordEditing";
+export const isEmpty = (value: string): boolean => value === "";
+export const isFileAttached = (value: string): boolean => value === "attached";
+export const isOutgoing = (value: string): boolean => value === "outgoing";
+export const isViewMode = (value: string): boolean => value === "view";
+export const isEditingMode = (value: string): boolean => value === "editing";
+export const isPasswordEditingMode = (value: string): boolean => value === "passwordEditing";
 
 
