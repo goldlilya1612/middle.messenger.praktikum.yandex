@@ -3,34 +3,22 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-    "strict": true,
+    "lib": ["ESNext", "DOM"],
     "moduleResolution": "Node",
-    "allowImportingTsExtensions": true,
+    "strict": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "noEmit": true,
-    /* Linting */
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+
+    "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "strictNullChecks": true
 
-    "allowUnreachableCode": false,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "exactOptionalPropertyTypes": true,
-    "strictPropertyInitialization": true,
-    "noImplicitAny": true,
-    "noImplicitOverride": true,
-    "noImplicitThis": true,
-    "noUncheckedIndexedAccess": true,
-    "strictBindCallApply": true,
   },
-  "include": [
-    "./src/**/*",
-    "declaration.d.ts",
-  ]
+  "include": ["./src/**/*"]
 }

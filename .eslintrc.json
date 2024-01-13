@@ -1,5 +1,9 @@
 {
-  "extends": "airbnb-base",
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
   "env": {
@@ -17,6 +21,7 @@
     "max-len": [2, 100],
     "max-params": [2, 3],
     "no-restricted-imports": "warn",
+    "no-underscore-dangle": "off",
     "import/prefer-default-export": "off",
     "import/no-unresolved": [2, { "ignore": ["\\?raw$"] }],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
@@ -29,6 +34,15 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "class-methods-use-this": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "no-param-reassign": "off",
+    "no-console": "warn",
+    "@typescript-eslint/no-this-alias": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-ts-comments": "off",
+    "no-useless-constructor": "warn"
   }
 }
