@@ -1,5 +1,5 @@
 import { navigate } from '../../utils/helpers/navigate';
-import Block from '../../utils/classes/Block';
+import Block from '../../utils/core/Block';
 
 export class NavigationPage extends Block {
   constructor() {

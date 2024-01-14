@@ -1,4 +1,4 @@
-import Block from '../../utils/classes/Block';
+import Block from '../../utils/core/Block';
 
 export class NotFoundPage extends Block {
   protected render(): string {

@@ -1,4 +1,4 @@
-import Block from '../../utils/classes/Block';
+import Block from '../../utils/core/Block';
 
 interface IHrefProps {
   href: string,

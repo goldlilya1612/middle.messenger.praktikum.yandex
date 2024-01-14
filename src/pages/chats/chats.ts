@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import Block from '../../utils/classes/Block';
+import Block from '../../utils/core/Block';
 import { CHATS_PAGE_PROPS } from '../../utils/constants';
 
 export class ChatsPage extends Block {

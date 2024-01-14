@@ -5,9 +5,10 @@
   "scripts": {
     "lint": "eslint src --ext .ts,.tsx,.js",
     "lint:fix": "npm run lint -- --fix",
-    "start": "vite build && node ./server.js",
-    "build": "vite build",
     "dev": "vite",
+    "prebuild": "tsc --noEmit",
+    "build": " npm run prebuild && vite build",
+    "start": "npm run build && node ./server.js",
     "preview": "vite preview"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import Block from '../../utils/classes/Block';
+import Block from '../../utils/core/Block';
 import { navigate } from '../../utils/helpers/navigate';
 
 export class RegisterPage extends Block {
