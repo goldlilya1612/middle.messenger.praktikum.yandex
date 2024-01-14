@@ -1,1 +1,1 @@
-export { default as ProfileInputView } from './profile-input-view.hbs?raw';
+export { ProfileInputView } from './profile-input-view';

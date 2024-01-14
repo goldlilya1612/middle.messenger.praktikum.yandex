@@ -1,1 +1,1 @@
-export { default as ChatCard } from './chats-card.hbs?raw';
+export { ChatCard } from './chat-card';

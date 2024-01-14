@@ -1,1 +1,1 @@
-export { default as ButtonChip } from './button-chip.hbs?raw';
+export { ButtonChip } from './button-chip';

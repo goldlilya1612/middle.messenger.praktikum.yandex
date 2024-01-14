@@ -11,7 +11,7 @@ const pages: IPages = {
   chats: Pages.ChatsPage,
   'not-found-page': Pages.NotFoundPage,
   'server-error-page': Pages.ServerErrorPage,
-  // profile: [Pages.ProfilePage, PROFILE_PAGE_PROPS],
+  profile: Pages.ProfilePage,
 };
 
 export function navigate(page: string) {
