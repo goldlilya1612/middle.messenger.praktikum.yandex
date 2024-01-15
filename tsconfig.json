@@ -11,7 +11,13 @@
     "esModuleInterop": true,
     "noEmit": true,
     "noImplicitReturns": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "sourceMap": false,
+    "strictNullChecks": false
   },
   "include": ["src"]
 }
