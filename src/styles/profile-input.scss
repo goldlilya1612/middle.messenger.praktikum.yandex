@@ -1,9 +1,10 @@
-@import "src/styles/variables.scss";
+@import url("src/styles/variables.scss");
 
 .profile {
   &__input-block-wrapper {
     margin-bottom: 10px;
   }
+
   &__input-block {
     border-bottom: 1px solid $light-grey-color;
     padding-bottom: 10px;

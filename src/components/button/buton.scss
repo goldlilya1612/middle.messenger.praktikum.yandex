@@ -1,4 +1,4 @@
-@import "src/styles/variables.scss";
+@import url("src/styles/variables.scss");
 
 .button {
   background-color: $purple-color;
@@ -7,7 +7,6 @@
   border-radius: 8px;
   width: 280px;
   height: 37px;
-
   transition: background-color .2s ease-out;
 
   &:hover {
