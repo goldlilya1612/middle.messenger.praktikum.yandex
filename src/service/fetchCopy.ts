@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 const METHODS = {
   GET: 'GET',
   POST: 'POST',
@@ -68,6 +67,7 @@ class FetchCopy {
         });
       }
 
+      // eslint-disable-next-line func-names
       xhr.onload = function () {
         resolve(xhr);
       };

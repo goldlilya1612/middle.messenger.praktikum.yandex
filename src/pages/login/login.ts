@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import Block from '../../utils/core/Block';
 import { navigate } from '../../utils/helpers/navigate';
 import * as validators from '../../utils/helpers/validators';

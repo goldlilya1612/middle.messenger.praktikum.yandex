@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 export const CHATS_PAGE_PROPS = {
   chats: [
     {

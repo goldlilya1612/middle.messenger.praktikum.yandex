@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import Block from '../../utils/core/Block';
 import { PROFILE_PAGE_PROPS } from '../../utils/constants';
 import { InputField } from '../../components';

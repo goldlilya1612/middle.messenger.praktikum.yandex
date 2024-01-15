@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import Block from '../../utils/core/Block';
 import { CHATS_PAGE_PROPS } from '../../utils/constants';
 import * as validators from '../../utils/helpers/validators';

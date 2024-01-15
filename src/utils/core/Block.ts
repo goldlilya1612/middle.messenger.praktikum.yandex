@@ -20,10 +20,8 @@ class Block {
 
   protected props: BlockProps;
 
-  // eslint-disable-next-line no-use-before-define
   protected refs: Record<string, Block> = {};
 
-  // eslint-disable-next-line no-use-before-define
   public children: Record<string, Block>;
 
   private eventBus: () => EventBus;

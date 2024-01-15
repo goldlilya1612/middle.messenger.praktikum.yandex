@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import Block from '../../utils/core/Block';
 
 interface IChatCardProps {
