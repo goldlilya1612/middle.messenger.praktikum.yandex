@@ -1,17 +1,67 @@
 /* eslint-disable max-len */
 import Block from '../../utils/core/Block';
 import { PROFILE_PAGE_PROPS } from '../../utils/constants';
+import { InputField } from '../../components';
+import { isFormValid } from '../../utils/helpers/helpers';
+import { navigate } from '../../utils/helpers/navigate';
+import * as validators from '../../utils/helpers/validators';
 
 export class ProfilePage extends Block {
   constructor() {
     const {
-      mode, formInputs, passwordInputs, title,
+      mode, passwordInputs, title,
     } = PROFILE_PAGE_PROPS;
     super({
       mode,
-      formInputs,
       passwordInputs,
       title,
+      onEdit: (event: Event) => {
+        event.preventDefault();
+        const email = (this.refs.email as InputField).value();
+        const login = (this.refs.login as InputField).value();
+        const firstName = (this.refs.first_name as InputField).value();
+        const secondName = (this.refs.second_name as InputField).value();
+        const displayName = (this.refs.display_name as InputField).value();
+        const phone = (this.refs.phone as InputField).value();
+
+        console.log({
+          email,
+          login,
+          phone,
+          first_name: firstName,
+          second_name: secondName,
+          display_name: displayName,
+        });
+
+        const isValid = isFormValid();
+
+        if (!isValid) return;
+
+        navigate('chats');
+      },
+      onEditPassword: (event: Event) => {
+        event.preventDefault();
+
+        const password = (this.refs.password as InputField).value();
+        const newPassword = (this.refs.new_password as InputField).value();
+        const newPasswordAgain = (this.refs.new_password_again as InputField).value();
+
+        console.log({
+          password,
+          new_password: newPassword,
+          new_password_gain: newPasswordAgain,
+        });
+
+        const isValid = isFormValid();
+
+        if (!isValid) return;
+
+        navigate('chats');
+      },
+      validate: {
+        password: validators.password,
+        passwordAgain: validators.passwordAgain,
+      },
     });
   }
 
@@ -36,11 +86,14 @@ export class ProfilePage extends Block {
                         </div>
                         <form class="profile__form-wrapper">
                             <div class="profile__form">
-                                {{#each formInputs}}
-                                    {{{ ProfileInput name=this.name label=this.label value=this.value type=this.type }}}
-                                {{/each}}
+                                {{{ ProfileInput ref="email" validate=validate.email label="Почта" type="email" value="pochta@yandex.ru" name="email" }}}
+                                {{{ ProfileInput ref="login" validate=validate.login label="Логин" type="text" value="lalvolodina" name="login" }}}
+                                {{{ ProfileInput ref="first_name" validate=validate.name label="Имя" type="text" value="Лиля" name="first_name" }}}
+                                {{{ ProfileInput ref="second_name" validate=validate.name label="Фамилия" type="text" value="Володина" name="second_name" }}}
+                                {{{ ProfileInput ref="display_name" validate=validate.name label="Имя в чате" type="text" value="Лиля)))0))0" name="display_name" }}}
+                                {{{ ProfileInput ref="phone" validate=validate.phone label="Телефон" type="tel" value="999999999999999" name="phone" }}}
                             </div>
-                            {{{ Button type="submit" label="Сохранить"}}}
+                            {{{ Button type="submit" onClick=onEdit label="Сохранить"}}}
                         </form>
 <!--                        {{#> ModalWindow  title="Загрузить файл"}}-->
 <!--                            &lt;!&ndash;                <p class="modal-window__file-name">pic.1</p>&ndash;&gt;-->
@@ -61,11 +114,11 @@ export class ProfilePage extends Block {
                         <img class="profile__image" src="assets/profile.svg" alt="profile">
                         <form class="profile__form-wrapper">
                             <div class="profile__form">
-                                {{#each passwordInputs}}
-                                    {{{ ProfileInput name=this.name label=this.label value=this.value type=this.type}}}
-                                {{/each}}
+                            {{{ ProfileInput ref="password" validate=validate.password label="Старый пароль" type="password" value="123456789L" name="password" }}}
+                            {{{ ProfileInput ref="new_password" validate=validate.password label="Новый пароль" type="password" value="" name="new-password" }}}
+                            {{{ ProfileInput ref="new_password_again" validate=validate.password label="Повторите новый пароль" type="password" value="" name="new-password-again" }}}
                             </div>
-                            {{{ Button type="submit" label="Сохранить"}}}
+                            {{{ Button type="submit" onClick=onEditPassword label="Сохранить"}}}
                         </form>
                     {{/if}}
                     

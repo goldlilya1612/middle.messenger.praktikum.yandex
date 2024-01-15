@@ -33,12 +33,6 @@ export class InputField extends Block {
     return true;
   }
 
-  init(): void {
-    this.props.events = {
-      click: this.props.onClick,
-    };
-  }
-
   protected render(): string {
     const {
       name, placeholder, type, label,
@@ -52,6 +46,7 @@ export class InputField extends Block {
                     type="${type}"
                     ref="input"
                     onBlur=onBlur
+                    className="input__element"
                 }}}
                 {{{ ErrorLine error=error ref="errorLine"}}}
             </div>`);

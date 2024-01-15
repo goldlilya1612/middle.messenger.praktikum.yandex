@@ -2,9 +2,11 @@ import Block from '../../utils/core/Block';
 
 interface IInputProps {
   name: string;
-  placeholder: string;
+  placeholder?: string;
   type: string;
-  onBlur?: () => void
+  onBlur?: () => void;
+  className: string;
+  value?: string
 }
 
 export class Input extends Block {
@@ -19,17 +21,18 @@ export class Input extends Block {
 
   protected render(): string {
     const {
-      name, placeholder, type,
+      name, placeholder, type, className, value,
     } = this.props;
 
     return (`
         <input
             ref="input"
-            class="input__element"
-            placeholder='${placeholder}'
+            class='${className}'
+            ${placeholder ? `placeholder="${placeholder}"` : ''}
             name='${name}'
             id='${name}'
             type='${type}'
+            ${value ? `value="${value}"` : ''}
         />
     `);
   }
