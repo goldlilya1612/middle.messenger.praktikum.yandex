@@ -26,6 +26,7 @@ Handlebars.registerPartial('ChatsBlock', Components.ChatsBlock);
 Handlebars.registerPartial('ModalWindow', Components.ModalWindow);
 
 registerComponent('Button', Components.Button);
+registerComponent('SendButton', Components.SendButton);
 registerComponent('Input', Components.Input);
 registerComponent('InputField', Components.InputField);
 registerComponent('RedirectLink', Components.RedirectLink);

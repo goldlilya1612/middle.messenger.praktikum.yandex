@@ -40,6 +40,13 @@ export const email = (value: string) => {
   }
   return '';
 };
+
+export const message = (value: string) => {
+  if (value.length === 0) {
+    return 'Поле не может быть пустым';
+  }
+  return '';
+};
 export const name = (value: string) => {
   if (value.length === 0) {
     return 'Поле не может быть пустым';

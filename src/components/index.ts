@@ -2,6 +2,7 @@ export { FormAuth } from './form-auth';
 export { InputField } from './input-field';
 export { Input } from './input';
 export { Button } from './button';
+export { SendButton } from './send-button';
 export { RedirectLink } from './redirect-link';
 export { ChatsBlock } from './chats-block';
 export { SearchField } from './search-field';

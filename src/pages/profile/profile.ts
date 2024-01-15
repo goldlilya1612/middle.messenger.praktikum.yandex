@@ -8,12 +8,9 @@ import * as validators from '../../utils/helpers/validators';
 
 export class ProfilePage extends Block {
   constructor() {
-    const {
-      mode, passwordInputs, title,
-    } = PROFILE_PAGE_PROPS;
+    const { mode, title } = PROFILE_PAGE_PROPS;
     super({
       mode,
-      passwordInputs,
       title,
       onEdit: (event: Event) => {
         event.preventDefault();
