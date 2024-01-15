@@ -1,8 +1,9 @@
 @import "normalize.css";
 
-@import "./font";
-@import "./form";
-@import "./profile-input";
+@import "variables";
+@import "font";
+@import "form";
+@import "profile-input";
 
 @import "../components/form-auth/form-auth";
 @import "../components/input-field/input-field";
