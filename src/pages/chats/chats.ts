@@ -47,7 +47,7 @@ export class ChatsPage extends Block {
                     
 <!--                    {{#> ModalWindow  title="Добавить пользователя"}}-->
 <!--                    <form>-->
-<!--                        {{{ Input label="Логин" type="text" placeholder="Логин" name="login" error="" }}}-->
+<!--                        {{{ InputField label="Логин" type="text" placeholder="Логин" name="login" error="" }}}-->
 <!--                        {{{ Button type="submit" label="Добавить"}}}-->
 <!--                    </form>-->
 <!--                    {{/ModalWindow}}-->

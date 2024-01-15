@@ -27,8 +27,10 @@ Handlebars.registerPartial('ModalWindow', Components.ModalWindow);
 
 registerComponent('Button', Components.Button);
 registerComponent('Input', Components.Input);
+registerComponent('InputField', Components.InputField);
 registerComponent('RedirectLink', Components.RedirectLink);
 registerComponent('ErrorLink', Components.ErrorLink);
+registerComponent('ErrorLine', Components.ErrorLine);
 registerComponent('SearchField', Components.SearchField);
 registerComponent('ChatCard', Components.ChatCard);
 registerComponent('MessagesHeader', Components.MessagesHeader);

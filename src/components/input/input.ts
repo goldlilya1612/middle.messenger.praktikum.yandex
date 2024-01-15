@@ -4,35 +4,33 @@ interface IInputProps {
   name: string;
   placeholder: string;
   type: string;
-  error: string;
-  label: string;
+  onBlur?: () => void
 }
+
 export class Input extends Block {
   constructor(props: IInputProps) {
-    super(props);
-  }
-
-  init(): void {
-    this.props.events = {
-      click: this.props.onClick,
-    };
+    super({
+      ...props,
+      events: {
+        blur: props.onBlur,
+      },
+    });
   }
 
   protected render(): string {
     const {
-      name, placeholder, type, error, label,
+      name, placeholder, type,
     } = this.props;
 
-    return (`<div class="input__container">
-                <label class="input__label" for='${name}'>${label}</label>
-                <input
-                    class="input__element"
-                    placeholder='${placeholder}'
-                    name='${name}'
-                    id='${name}'
-                    type='${type}'
-                />
-                <span class="input__error">${error}</span>
-            </div>`);
+    return (`
+        <input
+            ref="input"
+            class="input__element"
+            placeholder='${placeholder}'
+            name='${name}'
+            id='${name}'
+            type='${type}'
+        />
+    `);
   }
 }
