@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import url("src/styles/variables.scss");
 
 .chats {
   flex-grow: 1;
@@ -9,10 +9,6 @@
     padding-top: 21px;
     background-color: $white-color;
     top: 0;
-  }
-
-  &__list {
-    margin: 0;
   }
 
   &__link {
@@ -32,6 +28,7 @@
   }
 
   &__list {
+    margin: 0;
     list-style-type: none;
     padding: 0;
   }

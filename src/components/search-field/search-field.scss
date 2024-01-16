@@ -1,4 +1,4 @@
-@import "src/styles/variables.scss";
+@import url("src/styles/variables.scss");
 
 .search-field-containter {
   position: relative;
@@ -13,7 +13,7 @@
   height: 32px;
   border-radius: 5px;
   background-color: #EFEFEF;
-  opacity: 39%;
+  opacity: 0.39;
   padding: 10px;
   box-sizing: border-box;
   font-size: 12px;

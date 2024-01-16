@@ -1,4 +1,4 @@
-@import "src/styles/variables.scss";
+@import url("src/styles/variables.scss");
 
 .button-chip {
   font-size: 12px;
@@ -23,7 +23,7 @@
   }
 
   &_red {
-    background-color: #FFCCCC;
+    background-color: #FCC;
     color: #DD3720;
   }
 }

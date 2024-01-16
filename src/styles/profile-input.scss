@@ -1,19 +1,18 @@
-@import "src/styles/variables.scss";
+@import url("src/styles/variables.scss");
 
 .profile {
+  &__input-block-wrapper {
+    margin-bottom: 10px;
+  }
+
   &__input-block {
     border-bottom: 1px solid $light-grey-color;
     padding-bottom: 10px;
-    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     min-width: 510px;
     font-size: 13px;
     column-gap: 10px;
-
-    &:last-of-type {
-      border-bottom: none;
-    }
   }
 
   &__input {
