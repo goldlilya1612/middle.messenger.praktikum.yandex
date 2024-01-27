@@ -1,8 +1,9 @@
-@import "src/styles/variables.scss";
+@import url("src/styles/variables.scss");
 
 .messages-block {
   &__header-menu {
     padding: 0 10px;
+
     &:hover {
       cursor: pointer;
     }

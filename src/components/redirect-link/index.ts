@@ -1,1 +1,1 @@
-export { default as RedirectLink } from './redirect-link.hbs?raw';
+export { RedirectLink } from './redirect-link';

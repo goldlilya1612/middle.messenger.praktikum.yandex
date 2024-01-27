@@ -15,6 +15,18 @@
 - авторизация;
 - изменение данных (в том числе добавление аватара).
 
+Для рендера компонентов создан класс Block со всеми методами жизненного цикла
+
+## Инструменты
+***
+- HTML
+- SCSS
+- Vanilla JS
+- Handlebars
+
+Блоки и компоненты созданы с помощью:
+шаблонизатора, Event Bus, Proxy (JS-объекта прокси), DOM API.
+
 ## Макет
 ***
 [Ссылка на макет (figma)](https://www.figma.com/file/P4pE0mLu4Fe5ItdEz23vaS/chat?type=design&node-id=0%3A1&mode=design&t=cRukUuycrhSZ6TmL-1).
@@ -26,6 +38,8 @@
 `npm start` - сборка и запуск проекта
 
 `npm run dev` - запуск проекта в режиме разработки
+
+`npm run prebuild` - проверка типов для production-сборки
 
 `npm run build` - сборка проекта
 

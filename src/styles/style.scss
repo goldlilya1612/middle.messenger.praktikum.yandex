@@ -1,16 +1,15 @@
 @import "normalize.css";
-
-@import "./font";
-@import "./form";
-@import "./profile-input";
-
+@import "variables";
+@import "font";
+@import "form";
+@import "profile-input";
 @import "../components/form-auth/form-auth";
-@import "../components/input/input";
+@import "../components/input-field/input-field";
 @import "../components/button/buton";
 @import "../components/redirect-link/redirect-link";
 @import "../components/chats-block/chats-block";
 @import "../components/search-field/search-field";
-@import "../components/chat-card/chats-card";
+@import "../components/chat-card/chat-card";
 @import "../components/empty-block/empty-block";
 @import "../components/error-block/error-block";
 @import "../components/error-link/error-link";
@@ -20,20 +19,16 @@
 @import "../components/button-chip/button-chip";
 @import "../components/profile-buttons-block/profile-buttons-block";
 @import "../components/modal-window/modal-window";
-
 @import "../pages/chats/chats";
 @import "../pages/profile/profile";
+@import "../pages/navigation/navigation";
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   font-weight: 500;
 
   input {
     outline:none;
-    border: none;
-  }
-
-  button {
     border: none;
   }
 
@@ -46,6 +41,7 @@ body {
   }
 
   button {
+    border: none;
     padding: 0;
     background-color: inherit;
 
