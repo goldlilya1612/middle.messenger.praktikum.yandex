@@ -1,5 +1,8 @@
 import Block from '../../utils/core/Block';
+import router from '../../utils/core/Router';
 import { CHATS_PAGE_PROPS } from '../../utils/constants';
+import { ERoutes } from '../../utils/enums/routes.enum';
+import { logout } from '../../services/auth';
 
 export class ChatsPage extends Block {
   constructor() {
@@ -11,6 +14,16 @@ export class ChatsPage extends Block {
       menuButtons,
       messages,
       attachButtons,
+      onArrowButtonClick: () => {
+        router.go(ERoutes.PROFILE);
+      },
+      onLinkClick: async () => {
+        try {
+          await logout();
+        } catch (error: any) {
+          throw new Error(error);
+        }
+      },
     });
   }
 
@@ -19,10 +32,10 @@ export class ChatsPage extends Block {
             <section class="chats">
                 {{#> ChatsBlock}}
                     <div class="chats__header">
-                        <a class="chats__link" href="#">
-                            <p class="chats__link-text" page="profile">Профиль</p>
-                            <img class="chats__link-icon" src="assets/arrow-icon.svg" alt="arrow">
-                        </a>
+                        <div class="chats__header-wrapper">                  
+                            {{{ RedirectLink page="register" label="Выйти" onClick=onLinkClick}}}
+                            {{{ProfileArrowButton onClick=onArrowButtonClick}}}
+                        </div>
                         <!--        set value to hide placeholder-->
                         {{{ SearchField value="" name="search-field"}}}
                     </div>

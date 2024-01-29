@@ -1,42 +1,49 @@
 import Block from '../../utils/core/Block';
-import { navigate } from '../../utils/helpers/navigate';
+
 import * as validators from '../../utils/helpers/validators';
 import { InputField } from '../../components';
 import { isFormValid } from '../../utils/helpers/helpers';
+import { ICreateUser } from '../../utils/interfaces/create-user.interface';
+import { register } from '../../services/auth';
+import router from '../../utils/core/Router';
+import { ERoutes } from '../../utils/enums/routes.enum';
 
 export class RegisterPage extends Block {
   constructor() {
     super({
       title: 'Регистрация',
-      onRegister: (event: Event) => {
+      onRegister: async (event: Event) => {
         event.preventDefault();
         const email = (this.refs.email as InputField).value();
         const login = (this.refs.login as InputField).value();
         const firstName = (this.refs.first_name as InputField).value();
         const secondName = (this.refs.second_name as InputField).value();
         const phone = (this.refs.phone as InputField).value();
-
         const password = (this.refs.password as InputField).value();
-        const passwordAgain = (this.refs.password_again as InputField).value();
 
-        console.log({
+        const newUser: ICreateUser = {
           email,
           login,
           password,
           phone,
           first_name: firstName,
           second_name: secondName,
-          password_again: passwordAgain,
-        });
+        };
 
         const isValid = isFormValid();
 
-        if (!isValid) return;
+        if (!isValid) {
+          throw new Error('Ошибка валидации');
+        }
 
-        navigate('chats');
+        try {
+          await register(newUser);
+        } catch (error: any) {
+          throw new Error(error);
+        }
       },
       onLinkClick: () => {
-        navigate('login');
+        router.go(ERoutes.LOGIN);
       },
       validate: {
         login: validators.login,
@@ -66,7 +73,7 @@ export class RegisterPage extends Block {
           </div>
             <div class="form__buttons">
               {{{ Button type="submit" label="Зарегистрироваться" onClick=onRegister}}}
-              {{{ RedirectLink page="login" href="#" label="Войти"}}}
+              {{{ RedirectLink onClick=onLinkClick page="login" label="Войти"}}}
             </div>
           </div>
         {{/FormAuth}}

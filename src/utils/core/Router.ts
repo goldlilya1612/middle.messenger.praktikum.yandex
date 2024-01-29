@@ -28,7 +28,6 @@ class Router {
 
   public use(pathname: string, block: typeof Block) {
     const route = new Route(pathname, block, { rootQuery: this._rootQuery });
-    console.log(route);
 
     this.routes.push(route);
     return this;
@@ -37,7 +36,6 @@ class Router {
   public start() {
     window.onpopstate = ((event: Event) => {
       const target = event.currentTarget as Window;
-      console.log('target ', target);
       this._onRoute(target.location.pathname);
     });
 

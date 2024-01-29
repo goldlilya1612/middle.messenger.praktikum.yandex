@@ -1,0 +1,19 @@
+@import url("src/styles/variables.scss");
+
+.chats {
+  &__link {
+    font-size: 12px;
+    color: $grey-color;
+    display: flex;
+    margin-right: 10px;
+    margin-left: auto;
+  }
+
+  &__link-text {
+    margin-left: auto;
+  }
+
+  &__link-icon {
+    margin-left: 4px;
+  }
+}

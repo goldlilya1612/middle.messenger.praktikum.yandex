@@ -44,6 +44,7 @@
     "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/ban-ts-comments": "off",
     "no-useless-constructor": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "no-shadow": "off"
   }
 }

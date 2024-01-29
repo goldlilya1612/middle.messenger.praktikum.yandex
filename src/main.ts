@@ -24,6 +24,24 @@ import {
   isViewMode,
 } from './utils/helpers/helpers';
 import { registerComponent } from './utils/helpers/register-component';
+import { AppState } from './utils/types/app-state.type';
+
+declare global {
+  interface Window {
+    store: Store<AppState>;
+  }
+
+  type Nullable<T> = T | null;
+
+}
+
+const initState: AppState = {
+  error: null,
+  user: null,
+  isOpenDialogChat: false,
+  chats: [],
+};
+window.store = new Store<AppState>(initState);
 
 Handlebars.registerHelper('isEmpty', isEmpty);
 Handlebars.registerHelper('isFileAttached', isFileAttached);
@@ -54,6 +72,7 @@ registerComponent('ProfileInput', Components.ProfileInput);
 registerComponent('ProfileInputView', Components.ProfileInputView);
 registerComponent('ProfileButtonsBlock', Components.ProfileButtonsBlock);
 registerComponent('EmptyBlock', Components.EmptyBlock);
+registerComponent('ProfileArrowButton', Components.ProfileArrowButton);
 
 document.addEventListener('DOMContentLoaded', () => {
   router
@@ -64,4 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .use(ERoutes.SERVER_ERROR_PAGE, ServerErrorPage)
     .use(ERoutes.NOT_FOUND_PAGE, NotFoundPage)
     .start();
+
+  // initApp();
 });

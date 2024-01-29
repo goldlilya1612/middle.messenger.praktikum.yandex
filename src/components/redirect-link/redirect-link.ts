@@ -3,6 +3,7 @@ import Block from '../../utils/core/Block';
 interface IHrefProps {
   href: string,
   label: string,
+  onLinkClick?: () => void
 }
 export class RedirectLink extends Block {
   constructor(props: IHrefProps) {
@@ -16,9 +17,9 @@ export class RedirectLink extends Block {
   }
 
   protected render(): string {
-    const { href, page, label } = this.props;
-    return (`<a class="redirect-link" href='${href}' ${page ? `page='${page}'` : ''}>
+    const { page, label } = this.props;
+    return (`<button class="redirect-link" ${page ? `page='${page}'` : ''}>
                 ${label}
-            </a>`);
+            </button>`);
   }
 }
