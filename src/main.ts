@@ -1,9 +1,20 @@
 import Handlebars from 'handlebars';
 
+import router from './utils/core/Router';
+
 import * as Components from './components';
 
-import { navigate } from './utils/helpers/navigate';
-import { registerComponent } from './utils/helpers/register-component';
+import {
+  ChatsPage,
+  LoginPage,
+  NotFoundPage,
+  ProfilePage,
+  RegisterPage,
+  ServerErrorPage,
+} from './pages';
+
+import { ERoutes } from './utils/enums/routes.enum';
+
 import {
   isEditingMode,
   isEmpty,
@@ -12,6 +23,7 @@ import {
   isPasswordEditingMode,
   isViewMode,
 } from './utils/helpers/helpers';
+import { registerComponent } from './utils/helpers/register-component';
 
 Handlebars.registerHelper('isEmpty', isEmpty);
 Handlebars.registerHelper('isFileAttached', isFileAttached);
@@ -43,4 +55,13 @@ registerComponent('ProfileInputView', Components.ProfileInputView);
 registerComponent('ProfileButtonsBlock', Components.ProfileButtonsBlock);
 registerComponent('EmptyBlock', Components.EmptyBlock);
 
-document.addEventListener('DOMContentLoaded', () => navigate('navigation'));
+document.addEventListener('DOMContentLoaded', () => {
+  router
+    .use(ERoutes.LOGIN, LoginPage)
+    .use(ERoutes.REGISTER, RegisterPage)
+    .use(ERoutes.PROFILE, ProfilePage)
+    .use(ERoutes.CHATS, ChatsPage)
+    .use(ERoutes.SERVER_ERROR_PAGE, ServerErrorPage)
+    .use(ERoutes.NOT_FOUND_PAGE, NotFoundPage)
+    .start();
+});
