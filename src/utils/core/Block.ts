@@ -3,7 +3,7 @@ import Handlebars from 'handlebars';
 import { nanoid } from 'nanoid';
 import { EventBus } from './EventBus';
 
-interface BlockProps {
+export interface BlockProps {
   events?: Record<string, (event: Event) => void>;
   [key: string]: any;
 }

@@ -1,60 +1,58 @@
 import AuthApi from '../api/auth';
-import { TApiError } from '../utils/types/auth.type';
 import { ICreateUser } from '../utils/interfaces/create-user.interface';
 import router from '../utils/core/Router';
 import { ILogin } from '../utils/interfaces/login.interface';
 import { ERoutes } from '../utils/enums/routes.enum';
-
-function apiHasError(response: any): response is TApiError {
-  return response?.reason;
-}
+import store from '../utils/core/Store';
 
 const authApi = new AuthApi();
 
 const getUser = async () => {
-  const responseUser = authApi.getUser();
-  if (apiHasError(responseUser)) {
-    throw Error(responseUser.reason);
-  }
+  try {
+    store.set('loading', true);
+    store.set('error', null);
 
-  return responseUser as any;
+    const user = await authApi.getUser();
+    store.set('user', user);
+  } catch (error) {
+    store.set('error', error);
+  } finally {
+    store.set('loading', false);
+  }
 };
-
 const register = async (data: ICreateUser): Promise<void> => {
-  const res = await authApi.createUser(data);
+  await authApi.createUser(data);
+  await getUser();
 
-  if (apiHasError(res)) {
-    throw Error(res.reason);
-  }
-
-  const user = await getUser();
-
-  window.store.set({ user });
   router.go(ERoutes.CHATS);
 };
 
 const loginUser = async (data: ILogin): Promise<void> => {
-  const res = await authApi.login(data);
+  try {
+    store.set('error', null);
+    store.set('loading', true);
 
-  if (apiHasError(res)) {
-    throw Error(res.reason);
+    await authApi.login(data);
+    await getUser();
+
+    router.go(ERoutes.CHATS);
+  } catch (error) {
+    store.set('error', error);
+  } finally {
+    store.set('loading', false);
   }
-
-  const user = await getUser();
-
-  window.store.set({ user });
-  router.go(ERoutes.CHATS);
 };
 
 const logout = async () => {
-  const res = await authApi.logout();
-
-  if (apiHasError(res)) {
-    throw Error(res.reason);
+  try {
+    await authApi.logout();
+    localStorage.removeItem('store');
+    router.go(ERoutes.LOGIN);
+  } catch (error) {
+    store.set('error', error);
+  } finally {
+    store.set('loading', false);
   }
-
-  window.store.set({ user: null, chats: [] });
-  router.go(ERoutes.LOGIN);
 };
 
 export {

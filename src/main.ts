@@ -5,13 +5,14 @@ import router from './utils/core/Router';
 import * as Components from './components';
 
 import {
-  ChatsPage,
-  LoginPage,
   NotFoundPage,
   ProfilePage,
   RegisterPage,
   ServerErrorPage,
 } from './pages';
+
+import LoginPageWithStore from './pages/login/login';
+import ChatsPageWithStore from './pages/chats/chats';
 
 import { ERoutes } from './utils/enums/routes.enum';
 
@@ -24,24 +25,8 @@ import {
   isViewMode,
 } from './utils/helpers/helpers';
 import { registerComponent } from './utils/helpers/register-component';
-import { AppState } from './utils/types/app-state.type';
-
-declare global {
-  interface Window {
-    store: Store<AppState>;
-  }
-
-  type Nullable<T> = T | null;
-
-}
-
-const initState: AppState = {
-  error: null,
-  user: null,
-  isOpenDialogChat: false,
-  chats: [],
-};
-window.store = new Store<AppState>(initState);
+import store from './utils/core/Store';
+import { getUser } from './services/auth';
 
 Handlebars.registerHelper('isEmpty', isEmpty);
 Handlebars.registerHelper('isFileAttached', isFileAttached);
@@ -74,15 +59,43 @@ registerComponent('ProfileButtonsBlock', Components.ProfileButtonsBlock);
 registerComponent('EmptyBlock', Components.EmptyBlock);
 registerComponent('ProfileArrowButton', Components.ProfileArrowButton);
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('popstate', () => {
+  router.start();
+});
+
+document.addEventListener('DOMContentLoaded', async () => {
+  store.removeState();
+
   router
-    .use(ERoutes.LOGIN, LoginPage)
+    .use(ERoutes.LOGIN, LoginPageWithStore)
     .use(ERoutes.REGISTER, RegisterPage)
     .use(ERoutes.PROFILE, ProfilePage)
-    .use(ERoutes.CHATS, ChatsPage)
+    .use(ERoutes.CHATS, ChatsPageWithStore)
     .use(ERoutes.SERVER_ERROR_PAGE, ServerErrorPage)
-    .use(ERoutes.NOT_FOUND_PAGE, NotFoundPage)
-    .start();
+    .use(ERoutes.NOT_FOUND_PAGE, NotFoundPage);
 
-  // initApp();
+  try {
+    await getUser();
+
+    const currentPath = sessionStorage.getItem('sessionRoute');
+
+    if (currentPath) {
+      sessionStorage.removeItem('sessionRoute');
+    }
+
+    const userData = store.getState('user');
+    const inAuthorized = Object.keys(userData).length && !Object.keys(userData).includes('reason');
+
+    if (inAuthorized) {
+      router.go(
+        currentPath
+        || ERoutes.CHATS,
+      );
+    } else {
+      router.go(ERoutes.LOGIN);
+    }
+  } catch (error) {
+    router.go(ERoutes.LOGIN);
+    throw new Error(`Ошибка: ${error}`);
+  }
 });

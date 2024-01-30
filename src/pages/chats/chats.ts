@@ -3,6 +3,7 @@ import router from '../../utils/core/Router';
 import { CHATS_PAGE_PROPS } from '../../utils/constants';
 import { ERoutes } from '../../utils/enums/routes.enum';
 import { logout } from '../../services/auth';
+import { connect } from '../../utils/helpers/connect';
 
 export class ChatsPage extends Block {
   constructor() {
@@ -69,3 +70,5 @@ export class ChatsPage extends Block {
             `);
   }
 }
+
+export default connect(ChatsPage);

@@ -6,6 +6,7 @@ import router from '../../utils/core/Router';
 import { ERoutes } from '../../utils/enums/routes.enum';
 import { ILogin } from '../../utils/interfaces/login.interface';
 import { loginUser } from '../../services/auth';
+import { connect } from '../../utils/helpers/connect';
 
 export class LoginPage extends Block {
   constructor() {
@@ -60,3 +61,5 @@ export class LoginPage extends Block {
         `);
   }
 }
+
+export default connect(LoginPage);

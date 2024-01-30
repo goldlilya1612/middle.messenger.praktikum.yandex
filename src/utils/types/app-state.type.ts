@@ -1,8 +1,9 @@
 export type AppState = {
   error: string | null,
   user: User | null,
-  isOpenDialogChat: boolean,
-  chats: Chat[]
+  loading: boolean,
+  // isOpenDialogChat: boolean,
+  // chats: Chat[] | null
 }
 
 export type User = {
@@ -16,11 +17,11 @@ export type User = {
   email: string;
 };
 
-export type Chat = {
-  id: number,
-  title: string,
-  avatar: Nullable<string>,
-  unreadCount: number,
-  // lastMessage: LastMessage | null
-  lastMessage: null
-}
+// export type Chat = {
+//   id: number,
+//   title: string,
+//   // avatar: Nullable<string>,
+//   unreadCount: number,
+//   // lastMessage: LastMessage | null
+//   lastMessage: null
+// }
